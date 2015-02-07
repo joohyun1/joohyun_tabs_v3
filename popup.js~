@@ -21,8 +21,8 @@ function addFolder() {
 	console.log("ok");
 	chrome.runtime.sendMessage(
 		{msg: "addf",
-		 name: folder_name});
-	
+		 name: folder_name+" 00000000000"});
+	alert(decodeURIComponent(querystring)); 
 	//var btn = document.createElement("BUTTON");
 	//var t = document.createTextNode(folder_name);
 	//btn.appendChild(t);
