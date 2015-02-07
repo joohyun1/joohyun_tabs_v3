@@ -12,7 +12,9 @@ chrome.runtime.sendMessage({msg: "list"},
 			btn = document.createElement("BUTTON");
 			t = document.createTextNode(fname);
 			btn.appendChild(t);
-			document.body.appendChild(btn);
+			document.getElementById("valid").insertAdjacentHTML('afterbegin','<div id="row"><a id="link" href="folder.html?' + fname + '" target="_blank"></a></div>');
+			document.getElementById("link").appendChild(btn);
+			document.getElementById("row").insertAdjacentHTML('beforeend','<div id="manage">Manage</div>');
 		}
 	}
 );
@@ -22,22 +24,14 @@ function addFolder() {
 	chrome.runtime.sendMessage(
 		{msg: "addf",
 		 name: folder_name});
-	
 	//var btn = document.createElement("BUTTON");
 	//var t = document.createTextNode(folder_name);
 	//btn.appendChild(t);
 	//document.body.appendChild(btn);
 }
-function giveEmptyNameDefaultName()
-{
-    if(folder_name==="")
-	folder_name = "Untitled Folder";
-}
 
 function makeTabFolder() {
 	folder_name = document.getElementById("name").value;	
-	
-	giveEmptyNameDefaultName();
 	document.getElementById("valid").innerHTML = folder_name;
 	chrome.tabs.create({
 		url: chrome.runtime.getURL("folder.html") + '?' + folder_name,

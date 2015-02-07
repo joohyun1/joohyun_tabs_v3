@@ -11,7 +11,6 @@ chrome.runtime.onMessage.addListener(
 		if (request.msg == "addf") {
 			var folder_name = request.name;
 			console.log("addf");
-			folder_name = decodeURIComponent(folder_name);
 			console.log(folder_name);
 			folder_list[folder_list.length] = folder_name;
 			sendResponse({msg: "done"});

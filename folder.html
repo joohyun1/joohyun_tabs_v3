@@ -1,11 +1,13 @@
 <!doctype html>
 <html>
   <head>
-    <title>Getting Started Extension's Popup</title>
+    <title>Getting Started Extension's Popup</title> 
+    <link href="bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
       body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
         font-size: 100%;
+		background-color: PaleGreen;
       }
       #status {
         /* avoid an excessively wide status text */
@@ -24,7 +26,22 @@
      -->  
   </head>
   <body>  
-	<p id = "title"></p>
+	
 	<script type = "text/javascript" src="folder.js"></script>
+
+<div class="container">
+      <div class="page-header">
+        <h1 id = "title"></h1>
+        <p class="lead">There are currently X Tabs in this folder</p>
+      </div>
+
+      <h3>Three equal columns</h3>
+      <p>Get three equal-width columns <strong>starting at desktops and scaling to large desktops</strong>. On mobile devices, tablets and below, the columns will automatically stack.</p>
+      <div class="row">
+        <div class="col-md-4">Url is here</div>
+        <div class="col-md-4">Time Accessed is here</div>
+        <div class="col-md-4"></div>
+      </div>
+	  </div>
   </body>
 </html>
